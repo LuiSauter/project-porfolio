@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap');
 
 :root {
-    --background: linear-gradient(135deg, #3797b77e 0%, #3797b798 100%);
+    --background: linear-gradient(135deg, #3797b7b7 0%, #764ba2a9 100%);
     --color-primary: #3797b7;
     --color-secondary: #764ba2;
     --boton-padding: 20px 40px;
@@ -38,6 +38,11 @@ body {
 .hero .container {
     padding: 0;
 }
+/* 
+.nav-fixed {
+    position: fixed;
+    width: 90%;
+} */
 
 .nav {
     display: flex;
@@ -176,6 +181,8 @@ body {
     grid-template-areas: 
     "img1 img2 img3"
     "img1 img4 img5";
+    height: auto;
+    grid-template-rows: repeat(2,1fr);
     gap: 10px;
 }
 
@@ -215,6 +222,7 @@ body {
 
 .projects__hover {
     position: absolute;
+    /* background: #dc143c8c; */
     background: #dc143c8c;
     top: 0;
     left: 0;
@@ -333,4 +341,160 @@ body {
 
 .fab.footer__icon {
     line-height: 60px;
+}
+
+/* responsive design */
+
+@media screen and (max-width:800px) {
+    :root {
+        --boton-padding: 18px 40px;
+    }
+
+    .nav {
+        justify-content: space-around;
+    }
+
+    .nav__items--cta {
+        border: none;
+    }
+
+    .nav__items {
+        font-weight: 400;
+        border-bottom: 1px solid #fff;
+        margin-right: 0;
+    }
+
+    .nav__items--footer {
+        border: none;
+    }
+
+    .hero__texts {
+        width: 100%;
+        margin-bottom: 80px;
+    }
+
+    .hero__title {
+        font-size: 2.5rem;
+    }
+
+    .hero__subtitle {
+        font-size: 1.5rem;
+    }
+
+    /* about */
+    .presentation__copy {
+        width: 100%;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .about.container {
+        padding-top: 30px;
+    }
+
+    .about__img--left {
+        text-align: center;
+    }
+
+    .about__text:first-child {
+        grid-row: 2 / 3;
+    }
+
+    /* projects */
+    .projects__grid {
+        grid-template-areas:
+        "img1 img1 img2 img2"
+        "img1 img1 img3 img3"
+        "img4 img4 img5 img5";
+        height: auto;
+        grid-template-rows: repeat(3,200px);
+    }
+
+    /* testimony */
+    .testimony__grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer__contac {
+        grid-row: 1 / 2;
+    }
+}
+
+@media screen and (max-width:500px) {
+    :root {
+        --boton-padding: 18px 35px;
+    }
+
+    .subtitle {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-top: 10px;
+    }
+    
+    .nav__items {
+        padding: 0 10px;
+        border: 0;
+    }
+
+    .hero__texts {
+        text-align: center;
+        margin-bottom: 100px;
+    }
+
+    .hero__title {
+        font-size: 2rem;
+    }
+
+    /* about */
+    .presentation__picture {
+        width: 140px;
+        height: 140px;
+    }
+
+    .about {
+        row-gap: 60px;
+    }
+
+    .about.container {
+        padding-top: 10px;
+    }
+
+    /* projects */
+    .projects__grid {
+        grid-template-areas:
+        "img1"
+        "img2"
+        "img3"
+        "img4"
+        "img5";
+        height: auto;
+        grid-template-rows: repeat(5,250px);
+        gap: 10px;
+    }
+
+    /* testimony */
+    .testimony__item {
+        padding: 30px 15px;
+    }
+
+    .testimony__person {
+        flex-direction: column;
+    }
+
+    .testimony__img {
+        margin: 0;
+        margin-bottom: 20px;
+    }
 }
